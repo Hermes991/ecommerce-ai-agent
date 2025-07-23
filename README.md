@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/E--commerce%20AI%20Agent-🛍️%20FastAPI%20%7C%20SQL%20%7C%20LLM-purple?style=for-the-badge" />
+  <img src="https://sjc.microlink.io/BWGxIYmK_xalxpHmOVKoeVTR_3F7dFV9q664357xNHAUQda1H55SN_81tDkm5UaV71Np54rwt3Qb8GrSegNWaA.jpeg" alt="E-commerce AI Agent Badge" />
 </p>
 
 <h1 align="center">🛍️ E-commerce AI Agent</h1>
 
-<p align="center"><i>
-An intelligent assistant that answers natural language questions using SQL on e-commerce data.  
-Powered by FastAPI, SQLite, and clean rule-based logic — with optional chart generation.
-</i></p>
+<p align="center">
+  <i>An intelligent assistant that answers natural language questions using SQL on e-commerce data.<br>
+  Powered by FastAPI, SQLite, and clean rule-based logic — with optional chart generation.</i>
+</p>
 
 ---
 
@@ -24,28 +24,29 @@ Powered by FastAPI, SQLite, and clean rule-based logic — with optional chart g
 
 ## 🗂️ Project Structure
 
+```
 ecommerce-ai-agent/
 │
 ├── app/
-│ ├── api/ # FastAPI endpoints
-│ ├── llm/ # Question-to-SQL logic
-│ ├── sql/ # SQL execution + streaming
-│ └── main.py # App entry point
+│   ├── api/          # FastAPI endpoints
+│   ├── llm/          # Question-to-SQL logic
+│   ├── sql/          # SQL execution + streaming
+│   └── main.py       # App entry point
 │
 ├── data/
-│ ├── ad_sales.csv
-│ ├── total_sales.csv
-│ ├── eligibility.csv
-│ └── load_data.py # Loads CSVs into SQLite
+│   ├── ad_sales.csv
+│   ├── total_sales.csv
+│   ├── eligibility.csv
+│   └── load_data.py  # Loads CSVs into SQLite
 │
-├── static/ # Chart outputs
-│ └── cpc_chart.png # Auto-generated chart
+├── static/           # Chart outputs
+│   └── cpc_chart.png # Auto-generated chart
 │
-├── ecommerce.db # Final SQLite database
+├── ecommerce.db      # Final SQLite database
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
@@ -53,65 +54,89 @@ ecommerce-ai-agent/
 
 > ✅ Requires **Python 3.8+**
 
-1. **Install dependencies**
+### 1. **Install dependencies**
 ```bash
 pip install -r requirements.txt
+```
 
-2. **(Optional) Install manually if needed:**
+### 2. **(Optional) Install manually if needed:**
+```bash
 pip install fastapi uvicorn matplotlib pandas
+```
 
-3. **Load database with CSV data**
+### 3. **Load database with CSV data**
+```bash
 python data/load_data.py
+```
 
-4. **Run FastAPI server**
+### 4. **Run FastAPI server**
+```bash
 uvicorn app.main:app --reload
-Visit your app at: http://127.0.0.1:8000
+```
 
-✅ Example Questions to Try
-Using curl (Terminal)
+**Visit your app at:** http://127.0.0.1:8000
+
+---
+
+## ✅ Example Questions to Try
+
+### Using curl (Terminal)
+```bash
 curl -N -X POST http://127.0.0.1:8000/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "Which product had the highest CPC?"}'
+```
 
-Other supported questions:
+### Other supported questions:
+- 💰 "What is the total sales made?"
+- 📈 "Show me the top CPC item"
+- ✅ "Calculate the RoAS (Return on Ad Spend)"
 
-💰 What is the total sales made?
+### Or via Swagger UI
+Try the `/ask` endpoint directly from:
+👉 **http://127.0.0.1:8000/docs**
 
-📈 Show me the top CPC item
+---
 
-✅ Calculate the RoAS (Return on Ad Spend)
+## 📊 Chart Output Example
 
-Or via Swagger UI
-Try the /ask endpoint directly from:
-👉 http://127.0.0.1:8000/docs
-
-📊 Chart Output Example
-When you ask: "Which product had the highest CPC?",
+When you ask: **"Which product had the highest CPC?"**,
 a bar chart is generated at:
 
-📍 http://127.0.0.1:8000/static/cpc_chart.png
+📍 **http://127.0.0.1:8000/static/cpc_chart.png**
 
-🎯 Why This Project Stands Out
-🛠️ 100% local — no external APIs used
+---
 
-🧠 LLM-like intelligence without full models
+## 🎯 Why This Project Stands Out
 
-🔍 Safe SQL (NULLIF to avoid divide-by-zero in CPC)
+- 🛠️ **100% local** — no external APIs used
+- 🧠 **LLM-like intelligence** without full models
+- 🔍 **Safe SQL** (NULLIF to avoid divide-by-zero in CPC)
+- 🧼 **Beginner-readable** and modular code
+- 🚀 **Fast to run**, easy to extend
 
-🧼 Beginner-readable and modular code
+---
 
-🚀 Fast to run, easy to extend
+## 🧪 Use Cases
 
-🧪 Use Cases
-Use Case	Example
-Total Sales	What is the total sales made?
-Highest CPC	Show me the top CPC product
-Eligibility Breakdown	Count eligible items
+| Use Case | Example |
+|----------|---------|
+| **Total Sales** | "What is the total sales made?" |
+| **Highest CPC** | "Show me the top CPC product" |
+| **Eligibility Breakdown** | "Count eligible items" |
 
-🙌 Thank You
-This project was built as part of a GenAI assignment for Anarix.
+---
+
+## 🙌 Thank You
+
+This project was built as part of a **GenAI assignment for Anarix**.
 
 If you're evaluating this repo — thank you for your time.
-It’s designed to reflect clarity, real-world relevance, and a creative personal touch.
+It's designed to reflect **clarity**, **real-world relevance**, and a **creative personal touch**.
 
-<p align="center"><i>Built with ❤️ by Hermes Deena — July 2025</i></p> ```
+---
+
+<p align="center">
+  <i>Built with ❤️ by Hermes Deena — July 2025</i>
+</p>
+```
