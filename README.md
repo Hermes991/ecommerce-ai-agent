@@ -7,14 +7,14 @@
 
 ---
 
-## 🚀 Features
+## Features
 
-- ⚡ FastAPI backend with a single `/ask` endpoint
-- 🧠 Natural language → SQL translation
-- 📊 Chart support for specific queries (e.g., highest CPC)
-- 🗃️ SQLite backend from raw CSV files
-- 📤 Streaming assistant-like output
-- 🧱 Clean modular codebase (LLM, SQL, API)
+- FastAPI backend with a single `/ask` endpoint
+- Natural language → SQL translation
+- Chart support for specific queries (e.g., highest CPC)
+- SQLite backend from raw CSV files
+- Streaming assistant-like output
+- Clean modular codebase (LLM, SQL, API)
 
 ---
 
@@ -74,23 +74,35 @@ uvicorn app.main:app --reload
 
 ---
 
-## ✅ Example Questions to Try
+## Example Questions to Try
 
 ### Using curl (Terminal)
+```bash
+curl -N -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the total sales made?"}'
+```
+
+```bash
+curl -N -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Calculate the RoAS (Return on Ad Spend)"}'
+```
+
 ```bash
 curl -N -X POST http://127.0.0.1:8000/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "Which product had the highest CPC?"}'
 ```
 
-### Other supported questions:
-- 💰 "What is the total sales made?"
-- 📈 "Show me the top CPC item"
-- ✅ "Calculate the RoAS (Return on Ad Spend)"
+### Demo Questions:
+- 1. "What is the total sales made?"
+- 2. "Calculate the RoAS (Return on Ad Spend)"
+- 3. "Show me the top CPC item"
 
 ### Or via Swagger UI
 Try the `/ask` endpoint directly from:
-👉 **http://127.0.0.1:8000/docs**
+**http://127.0.0.1:8000/docs**
 
 ---
 
@@ -103,17 +115,17 @@ a bar chart is generated at:
 
 ---
 
-## 🎯 Why This Project Stands Out
+## Why This Project
 
-- 🛠️ **100% local** — no external APIs used
-- 🧠 **LLM-like intelligence** without full models
-- 🔍 **Safe SQL** (NULLIF to avoid divide-by-zero in CPC)
-- 🧼 **Beginner-readable** and modular code
-- 🚀 **Fast to run**, easy to extend
+- **100% local** — no external APIs used
+- **LLM-like intelligence** without full models
+- **Safe SQL** (NULLIF to avoid divide-by-zero in CPC)
+- **Beginner-readable** and modular code
+- **Fast to run**, easy to extend
 
 ---
 
-## 🧪 Use Cases
+##  Use Cases
 
 | Use Case | Example |
 |----------|---------|
@@ -123,7 +135,7 @@ a bar chart is generated at:
 
 ---
 
-## 🙌 Thank You
+## Thank You
 
 This project was built as part of a **GenAI assignment for Anarix**.
 
@@ -133,6 +145,6 @@ It's designed to reflect **clarity**, **real-world relevance**, and a **creative
 ---
 
 <p align="center">
-  <i>Built with ❤️ by Hermes Deena — July 2025</i>
+  <i>Built by Hermes Deena — July 2025</i>
 </p>
 ```
