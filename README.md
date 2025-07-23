@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://sjc.microlink.io/BWGxIYmK_xalxpHmOVKoeVTR_3F7dFV9q664357xNHAUQda1H55SN_81tDkm5UaV71Np54rwt3Qb8GrSegNWaA.jpeg" alt="E-commerce AI Agent Badge" />
-</p>
-
 <h1 align="center">🛍️ E-commerce AI Agent</h1>
 
 <p align="center">
