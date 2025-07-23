@@ -1,0 +1,117 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/E--commerce%20AI%20Agent-🛍️%20FastAPI%20%7C%20SQL%20%7C%20LLM-purple?style=for-the-badge" />
+</p>
+
+<h1 align="center">🛍️ E-commerce AI Agent</h1>
+
+<p align="center"><i>
+An intelligent assistant that answers natural language questions using SQL on e-commerce data.  
+Powered by FastAPI, SQLite, and clean rule-based logic — with optional chart generation.
+</i></p>
+
+---
+
+## 🚀 Features
+
+- ⚡ FastAPI backend with a single `/ask` endpoint
+- 🧠 Natural language → SQL translation
+- 📊 Chart support for specific queries (e.g., highest CPC)
+- 🗃️ SQLite backend from raw CSV files
+- 📤 Streaming assistant-like output
+- 🧱 Clean modular codebase (LLM, SQL, API)
+
+---
+
+## 🗂️ Project Structure
+
+ecommerce-ai-agent/
+│
+├── app/
+│ ├── api/ # FastAPI endpoints
+│ ├── llm/ # Question-to-SQL logic
+│ ├── sql/ # SQL execution + streaming
+│ └── main.py # App entry point
+│
+├── data/
+│ ├── ad_sales.csv
+│ ├── total_sales.csv
+│ ├── eligibility.csv
+│ └── load_data.py # Loads CSVs into SQLite
+│
+├── static/ # Chart outputs
+│ └── cpc_chart.png # Auto-generated chart
+│
+├── ecommerce.db # Final SQLite database
+├── requirements.txt
+├── .gitignore
+└── README.md
+
+
+---
+
+## ⚙️ Setup Instructions
+
+> ✅ Requires **Python 3.8+**
+
+1. **Install dependencies**
+```bash
+pip install -r requirements.txt
+
+2. **(Optional) Install manually if needed:**
+pip install fastapi uvicorn matplotlib pandas
+
+3. **Load database with CSV data**
+python data/load_data.py
+
+4. **Run FastAPI server**
+uvicorn app.main:app --reload
+Visit your app at: http://127.0.0.1:8000
+
+✅ Example Questions to Try
+Using curl (Terminal)
+curl -N -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Which product had the highest CPC?"}'
+
+Other supported questions:
+
+💰 What is the total sales made?
+
+📈 Show me the top CPC item
+
+✅ Calculate the RoAS (Return on Ad Spend)
+
+Or via Swagger UI
+Try the /ask endpoint directly from:
+👉 http://127.0.0.1:8000/docs
+
+📊 Chart Output Example
+When you ask: "Which product had the highest CPC?",
+a bar chart is generated at:
+
+📍 http://127.0.0.1:8000/static/cpc_chart.png
+
+🎯 Why This Project Stands Out
+🛠️ 100% local — no external APIs used
+
+🧠 LLM-like intelligence without full models
+
+🔍 Safe SQL (NULLIF to avoid divide-by-zero in CPC)
+
+🧼 Beginner-readable and modular code
+
+🚀 Fast to run, easy to extend
+
+🧪 Use Cases
+Use Case	Example
+Total Sales	What is the total sales made?
+Highest CPC	Show me the top CPC product
+Eligibility Breakdown	Count eligible items
+
+🙌 Thank You
+This project was built as part of a GenAI assignment for Anarix.
+
+If you're evaluating this repo — thank you for your time.
+It’s designed to reflect clarity, real-world relevance, and a creative personal touch.
+
+<p align="center"><i>Built with ❤️ by Hermes Deena — July 2025</i></p> ```
