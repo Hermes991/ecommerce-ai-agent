@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.log
+*.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Byte-compiled files
+*.pyo
+*.pyd
+
+# Static artifacts
+/static/cpc_chart.png
